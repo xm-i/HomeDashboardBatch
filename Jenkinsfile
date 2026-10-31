@@ -19,9 +19,9 @@ node {
           usernameVariable: 'SSH_USER')]) {
 
       stage('Deploy'){
-        sh 'scp -pr -i ${SSH_KEY} ./HomeDashboardBatch/bin/Release/net10.0/* ${SSH_USER}@batch-server.localnet:/opt/dashboard-batch'
-        sh 'ssh -i ${SSH_KEY} ${SSH_USER}@batch-server.localnet chmod 755 /opt/dashboard-batch'
-        sh 'ssh -i ${SSH_KEY} ${SSH_USER}@batch-server.localnet chmod 644 /opt/dashboard-batch/appsettings.json'
+        sh 'scp -pr -i ${SSH_KEY} ./HomeDashboardBatch/bin/Release/net10.0/* ${SSH_USER}@batch-server.internal:/opt/dashboard-batch'
+        sh 'ssh -i ${SSH_KEY} ${SSH_USER}@batch-server.internal chmod 755 /opt/dashboard-batch'
+        sh 'ssh -i ${SSH_KEY} ${SSH_USER}@batch-server.internal chmod 644 /opt/dashboard-batch/appsettings.json'
       }
     }
 
